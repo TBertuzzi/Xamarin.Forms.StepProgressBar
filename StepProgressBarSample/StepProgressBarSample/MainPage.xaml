@@ -8,8 +8,11 @@
         <!-- Place new controls here -->
         <Label Text="Step Progress Bar Control" />
 
-         <control:StepProgressBar Margin="60,0,60,0" StepCanTouch = "true" 
-                                         StepColor="Red" Steps="4"  x:Name="stepBar"/>
+         <control:StepProgressBar x:name="stepbar1" Margin="60,0,60,0" StepCanTouch = "true" 
+                                         StepColor="Red" Steps="4"  />
+
+         <control:StepProgressBar x:name="stepbar2" Margin="60,0,60,0" StepCanTouch = "true" 
+                                         StepColor="Blue" Steps="4" IsCircle= "false" />
             
     </StackLayout>
 </ContentPage>

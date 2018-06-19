@@ -8,7 +8,7 @@
     <PackageLicenseUrl>http://opensource.org/licenses/MS-PL</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/TBertuzzi/Xamarin.Forms.StepProgressBar</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/Xamarin.Forms.StepProgressBar</RepositoryUrl>
-    <PackageTags>xamarin xamarin.forms xamarin forms</PackageTags>
+    <PackageTags>xamarin xamarin.forms xamarin forms step stepbar stepprogressbar</PackageTags>
     <Description>StepProgressBar Control for Xamarin.Forms</Description>
     <PackageIconUrl>https://github.com/TBertuzzi/Xamarin.Forms.StepProgressBar/blob/master/Resources/stepIcon.png?raw=true</PackageIconUrl>
     <PackageReleaseNotes>First Version</PackageReleaseNotes>
