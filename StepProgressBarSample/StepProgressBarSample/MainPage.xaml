@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:StepProgressBarSample" 
+             xmlns:control="clr-namespace:Xamarin.Forms.StepProgressBar;assembly=Xamarin.Forms.StepProgressBar"
+             x:Class="StepProgressBarSample.MainPage" Padding="0,20,0,0">
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Step Progress Bar Control" />
+
+         <control:StepProgressBarControl Margin="60,0,60,0" StepCanTouch = "true" 
+                                         StepColor="Red" Steps="4"  x:Name="stepBar"/>
+            
+    </StackLayout>
+</ContentPage>
