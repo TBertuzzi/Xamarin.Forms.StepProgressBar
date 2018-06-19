@@ -120,7 +120,7 @@ namespace Xamarin.Forms.StepProgressBar
 
         void AddStyles()
         {
-            int cornerRadius = IsCircle ? 20 : 0;
+            double borderWith = IsCircle ? 0.5 : 0;
 
             var unselectedStyle = new Style(typeof(Button))
             {
@@ -129,7 +129,7 @@ namespace Xamarin.Forms.StepProgressBar
                     new Setter { Property = Button.BorderColorProperty,   Value = StepColor },
                     new Setter { Property = Button.TextColorProperty,   Value = StepColor },
                     new Setter { Property = Button.BorderWidthProperty,   Value = 0.5 },
-                    new Setter { Property = Button.CornerRadiusProperty,   Value = cornerRadius },
+                    new Setter { Property = Button.CornerRadiusProperty,   Value = 20 },
                     new Setter { Property = HeightRequestProperty,   Value = 40 },
                     new Setter { Property = WidthRequestProperty,   Value = 40 }
             }
@@ -142,7 +142,7 @@ namespace Xamarin.Forms.StepProgressBar
                     new Setter { Property = Button.TextColorProperty, Value = Color.White },
                     new Setter { Property = Button.BorderColorProperty, Value = StepColor },
                     new Setter { Property = Button.BorderWidthProperty,   Value = 0.5 },
-                    new Setter { Property = Button.CornerRadiusProperty,   Value = cornerRadius },
+                    new Setter { Property = Button.CornerRadiusProperty,   Value = 20 },
                     new Setter { Property = HeightRequestProperty,   Value = 40 },
                     new Setter { Property = WidthRequestProperty,   Value = 40 },
                     new Setter { Property = Button.FontAttributesProperty,   Value = FontAttributes.Bold }
