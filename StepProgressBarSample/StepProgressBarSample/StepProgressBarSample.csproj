@@ -6,6 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="LiveXAML" Version="2.1.34" />
     <PackageReference Include="Xamarin.Forms.StepProgressBar" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="StepProgressBar.cs" />
   </ItemGroup>
 </Project>

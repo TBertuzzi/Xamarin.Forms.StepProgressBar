@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace Xamarin.Forms.StepProgressBar
 {
-    public class StepProgressBar: StackLayout
+    public class StepProgressBar : StackLayout
     {
         Button _lastStepSelected;
+        public static readonly BindableProperty IsCircleProperty = BindableProperty.Create(nameof(IsCircle), typeof(bool), typeof(StepProgressBar), true);
         public static readonly BindableProperty StepsProperty = BindableProperty.Create(nameof(Steps), typeof(int), typeof(StepProgressBar), 0);
         public static readonly BindableProperty StepSelectedProperty = BindableProperty.Create(nameof(StepSelected), typeof(int), typeof(StepProgressBar), 0, defaultBindingMode: BindingMode.TwoWay);
         public static readonly BindableProperty StepColorProperty = BindableProperty.Create(nameof(StepColor), typeof(Xamarin.Forms.Color), typeof(StepProgressBar), Color.Black, defaultBindingMode: BindingMode.TwoWay);
         public static readonly BindableProperty StepCanTouchProperty = BindableProperty.Create(nameof(StepCanTouch), typeof(bool), typeof(StepProgressBar), true);
-        public static readonly BindableProperty IsCircleProperty = BindableProperty.Create(nameof(IsCircle), typeof(bool), typeof(StepProgressBar), true);
 
         public Color StepColor
         {
@@ -66,7 +66,7 @@ namespace Xamarin.Forms.StepProgressBar
                     {
                         Text = $"{i + 1}",
                         ClassId = $"{i + 1}",
-                        Style = Resources["unSelectedStyle"] as Style
+                        Style = (IsCircle ? Resources["unselectedCircleStyle"] : Resources["unselectedSquareStyle"]) as Style
                     };
 
                     button.Clicked -= Handle_Clicked;
@@ -109,9 +109,9 @@ namespace Xamarin.Forms.StepProgressBar
         void SelectElement(Button elementSelected)
         {
 
-            if (_lastStepSelected != null) _lastStepSelected.Style = Resources["unSelectedStyle"] as Style;
+            if (_lastStepSelected != null) _lastStepSelected.Style = (IsCircle ? Resources["unselectedCircleStyle"] : Resources["unselectedSquareStyle"]) as Style;
 
-            elementSelected.Style = Resources["selectedStyle"] as Style;
+            elementSelected.Style = (IsCircle ? Resources["selectedCircleStyle"] : Resources["selectedSquareStyle"]) as Style;
 
             StepSelected = Convert.ToInt32(elementSelected.Text);
             _lastStepSelected = elementSelected;
@@ -122,7 +122,7 @@ namespace Xamarin.Forms.StepProgressBar
         {
             double borderWith = IsCircle ? 0.5 : 0;
 
-            var unselectedStyle = new Style(typeof(Button))
+            var unselectedCircleStyle = new Style(typeof(Button))
             {
                 Setters = {
                     new Setter { Property = BackgroundColorProperty,   Value = Color.Transparent },
@@ -135,7 +135,7 @@ namespace Xamarin.Forms.StepProgressBar
             }
             };
 
-            var selectedStyle = new Style(typeof(Button))
+            var selectedCircleStyle = new Style(typeof(Button))
             {
                 Setters = {
                     new Setter { Property = BackgroundColorProperty, Value = StepColor },
@@ -149,9 +149,38 @@ namespace Xamarin.Forms.StepProgressBar
             }
             };
 
+            var unselectedSquareStyle = new Style(typeof(Button))
+            {
+                Setters = {
+                    new Setter { Property = BackgroundColorProperty,   Value = Color.Transparent },
+                    new Setter { Property = Button.BorderColorProperty,   Value = StepColor },
+                    new Setter { Property = Button.TextColorProperty,   Value = StepColor },
+                    new Setter { Property = Button.BorderWidthProperty,   Value = 0.5 },
+                    new Setter { Property = Button.CornerRadiusProperty,   Value = 1 },
+                    new Setter { Property = HeightRequestProperty,   Value = 40 },
+                    new Setter { Property = WidthRequestProperty,   Value = 40 }
+            }
+            };
+
+            var selectedSquareStyle = new Style(typeof(Button))
+            {
+                Setters = {
+                    new Setter { Property = BackgroundColorProperty, Value = StepColor },
+                    new Setter { Property = Button.TextColorProperty, Value = Color.White },
+                    new Setter { Property = Button.BorderColorProperty, Value = StepColor },
+                    new Setter { Property = Button.BorderWidthProperty,   Value = 0.5 },
+                    new Setter { Property = Button.CornerRadiusProperty,   Value = 1 },
+                    new Setter { Property = HeightRequestProperty,   Value = 40 },
+                    new Setter { Property = WidthRequestProperty,   Value = 40 },
+                    new Setter { Property = Button.FontAttributesProperty,   Value = FontAttributes.Bold }
+            }
+            };
+
             Resources = new ResourceDictionary();
-            Resources.Add("unSelectedStyle", unselectedStyle);
-            Resources.Add("selectedStyle", selectedStyle);
+            Resources.Add("unselectedCircleStyle", unselectedCircleStyle);
+            Resources.Add("selectedCircleStyle", selectedCircleStyle);
+            Resources.Add("unselectedSquareStyle", unselectedSquareStyle);
+            Resources.Add("selectedSquareStyle", selectedSquareStyle);
         }
 
 

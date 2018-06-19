@@ -5,14 +5,14 @@
              xmlns:control="clr-namespace:Xamarin.Forms.StepProgressBar;assembly=Xamarin.Forms.StepProgressBar"
              x:Class="StepProgressBarSample.MainPage" Padding="0,20,0,0">
     <StackLayout>
-        <!-- Place new controls here -->
+
         <Label Text="Step Progress Bar Control" />
 
-         <control:StepProgressBar x:name="stepbar1" Margin="60,0,60,0" StepCanTouch = "true" 
-                                         StepColor="Red" Steps="4"  />
+         <control:StepProgressBar x:Name="stepbar1" Margin="60,0,60,0" StepCanTouch = "true" 
+                                         StepColor="Red"  Steps="{Binding Steps}" StepSelected="{Binding Step}"  />
 
-         <control:StepProgressBar x:name="stepbar2" Margin="60,0,60,0" StepCanTouch = "true" 
-                                         StepColor="Blue" Steps="4" IsCircle= "false" />
-            
+         <control:StepProgressBar x:Name="stepbar2" Margin="60,0,60,0" StepCanTouch = "false" 
+                                         StepColor="Blue" Steps="{Binding Steps}" IsCircle= "false" />
+
     </StackLayout>
 </ContentPage>
