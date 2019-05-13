@@ -15,7 +15,7 @@ You can choose between a square or circular control.
 
 |Name|Info|
 | ------------------- | :------------------: |
-|Xamarin.Forms.StepProgressBar|[![NuGet](https://img.shields.io/badge/nuget-1.0.1-blue.svg)](https://www.nuget.org/packages/Xamarin.Forms.StepProgressBar/)|
+|Xamarin.Forms.StepProgressBar|[![NuGet](https://buildstats.info/nuget/Xamarin.Forms.StepProgressBar)](https://www.nuget.org/packages/Xamarin.Forms.StepProgressBar/)|
 
 
 **Platform Support**
