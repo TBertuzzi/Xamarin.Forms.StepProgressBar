@@ -2,6 +2,8 @@
 
 Add a step rogress bar in your Xamarin.Forms project.
 
+Square control Based on StepBar by [CrossGeeks](https://github.com/CrossGeeks) (https://github.com/CrossGeeks/StepBar).
+
 You can choose between a square or circular control.
  
 ###### This is the component, works on iOS, Android and UWP.
